@@ -1,4 +1,7 @@
 #include<iostream>
+
+using namespace std;
+
 class LinkedList
 {
     public:
@@ -59,5 +62,9 @@ class LinkedList
 
 int main()
 {
+    LinkedList lst;
+    for(int i = 0; i < 15; i++) lst.insert(i*10, i);
+    lst.insert(225, 4);
+    for(int i = 0; i < lst.size; i++) cout<<lst.at(i)<<endl;
     return 0;
 }
