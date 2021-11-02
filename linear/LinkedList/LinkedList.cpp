@@ -47,6 +47,18 @@ class LinkedList
         }
         this->size++;
     }
+    void pushFront(int data)
+    {
+        insert(data, 0);
+    }
+    void pushBack(int data)
+    {
+        insert(data, this->size);
+    }
+    void push(int data)
+    {
+        pushFront(data);
+    }
     int at(int index)
     {
         if(index<0 || index >= this->size) return 0;
@@ -63,8 +75,9 @@ class LinkedList
 int main()
 {
     LinkedList lst;
-    for(int i = 0; i < 15; i++) lst.insert(i*10, i);
+    for(int i = 0; i < 15; i++) lst.pushBack(i*10);
     lst.insert(225, 4);
+    lst.pushFront(124);
     for(int i = 0; i < lst.size; i++) cout<<lst.at(i)<<endl;
     return 0;
 }
