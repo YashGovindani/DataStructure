@@ -1,3 +1,4 @@
+#include<iostream>
 class LinkedList
 {
     public:
@@ -43,4 +44,20 @@ class LinkedList
         }
         this->size++;
     }
+    int at(int index)
+    {
+        if(index<0 || index >= this->size) return 0;
+        LinkedListNode *t = this->start;
+        while(index > 0)
+        {
+            t = t->next;
+            index--;
+        }
+        return t->data;
+    }
 };
+
+int main()
+{
+    return 0;
+}
